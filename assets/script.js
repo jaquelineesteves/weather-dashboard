@@ -43,7 +43,7 @@ const submitSearch = function (event) {
       tempInfo.textContent = '';
       humidityInfo.textContent = '';
       chosenCity.textContent = '';
-      datetoday.textContent = '';  
+      datetoday.textContent = '';
     }
   };
 
@@ -139,6 +139,7 @@ const displayCities = function (dataObj, searchTerm) {
 };
 
 function cardNextDays(dataO) {
+
 for (let i = 0; i < 40 ; i+=8) {
 
     const wind = `${dataO.list[i].wind.speed}`;
