@@ -44,6 +44,7 @@ const submitSearch = function (event) {
       humidityInfo.textContent = '';
       chosenCity.textContent = '';
       datetoday.textContent = '';
+      $('#nextdays').empty();
     }
   };
 
