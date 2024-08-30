@@ -146,8 +146,8 @@ for (let i = 0; i < 40 ; i+=8) {
     const icon =`${dataO.list[i].weather[0].icon}`
 
     const cardDiv = $('<div>');
-    cardDiv.addClass('card container d-flex mb-3 col-2 shadow p-3 mb-5 bg-white rounded');
-    cardDiv.css('max-width', '18rem');
+    cardDiv.addClass('card container d-flex mb-3 col-6 shadow p-3 mb-5 bg-white rounded');
+    cardDiv.css('max-width', '18rem' );
     
     const cardEl = $('<div>');
     cardEl.appendTo(cardDiv);
@@ -163,7 +163,7 @@ for (let i = 0; i < 40 ; i+=8) {
 
       iconDiv.append(iconImg);
       cardEl.append(iconDiv);
-      
+
       const cardtext = $('<p>');
       cardtext.addClass('card-text');
       cardtext.text(`${temp} ° celsius`);
