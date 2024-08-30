@@ -1,8 +1,10 @@
 # Farias weather
-
+  ![MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
+  
 ## Description
 
-I started creating a function to get data just by city, but then at the final, i realized that I needed the lat and lon, to get the 5 days, then I started again, it was more than 20 hours of work, I feel proud when each test works, the first button its the city that a born and the second the city that I live.
+Weather application by using openWeather API, the Technologies were basic HTML,
+CSS and JavaScript, the first button its the city that a born and the second the city that I live.
 
 ## Usage
 You can search by a city name, it will show the today's weather, icon, temperature, wind speed and humidity and the nexts 5 days.
@@ -12,7 +14,7 @@ You can search by a city name, it will show the today's weather, icon, temperatu
     
 
 ## Credits
-I had some help from the lectures, xpert learning, MDN web and google.
+I had some help from bootCamp lectures, xpert learning, MDN web and google.
 
 
 the icon code:
