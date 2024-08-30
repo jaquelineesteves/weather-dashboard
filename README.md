@@ -1,4 +1,4 @@
-# Farias weather
+# My weather
   ![MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
   
 ## Description
