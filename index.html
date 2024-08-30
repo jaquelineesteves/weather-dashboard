@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farias Weather</title>
+    <title>MyWeather</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -15,35 +15,41 @@
   ></script>
 
 </head>
-<header class=".bg-gradient">FARIAS Weather</header>
-
 <body>
- 
-        Search for a city:
-    <form class="form col-4 my-2" id="form" >
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id ="cityname">
-        <button class="btn btn-primary" type="submit" >Search</button>
-    </form>
-    <h3 class="card-header text-uppercase">Search by cityname:</h3>
-<div class="container hero"> 
-    <div id="city-btn" class="card-body list-group col-3" style="max-width: 18rem;">
-        <button citybtn="dourados,br" class="btn btn-primary">Dourados</button>
-        <button citybtn="niagara falls,ca" class="btn btn-primary">Niagara Falls</button>
-        <button citybtn="atlanta,us" class="btn btn-primary">Atlanta</button>
-        <button citybtn="san francisco,us" class="btn btn-primary">San Francisco</button>
-        <button citybtn="orlando,us" class="btn btn-primary">Orlando</button>
-        <button citybtn="new york,us" class="btn btn-primary">New York</button>
-        <button citybtn="chicago,us" class="btn btn-primary">Chicago</button>
-        <button citybtn="austin,us" class="btn btn-primary">Austin</button>
-    </div> 
+<header>
+    <h1 class ="title ">MyWeather</h1>
+<div class ="col-4 my-2 hero">
+    Search for a city:
+<form class="form container " id="form" >
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id ="cityname">
+    <button class="btn btn-outline-dark form " type="submit" >Search</button>
+</form>
+</div>
 
-    <div class="card text-dark bg-light mb-3 container col-9" id ="citycontainer" >
-          <h5 class="card-title" id="citychosen">  <span id="todaydate"> </span></h5>
-          <div id="icon"> <img id="wicon" src="" alt="Weather icon"></div>
+</header>
+<div id="city-btn" class ="container my-4">
+    Search by cityname:
+    <div class="container">
+    <button citybtn="dourados,br" class="btn btn-outline-dark">Dourados</button>
+    <button citybtn="niagara falls,ca" class="btn btn-outline-dark">Niagara Falls</button>
+        <button citybtn="atlanta,us" class="btn btn-outline-dark">Atlanta</button>
+        <button citybtn="san francisco,us" class="btn btn-outline-dark">San Francisco</button>
+        <button citybtn="orlando,us" class="btn btn-outline-dark">Orlando</button>
+        <button citybtn="new york,us" class="btn btn-outline-dark">New York</button>
+        <button citybtn="chicago,us" class="btn btn-outline-dark">Chicago</button>
+        <button citybtn="austin,us" class="btn btn-outline-dark">Austin</button>
+    </div>
+</div>
+
+    <div class="container card text-dark bg-light mb-3 col-9 shadow p-3 mb-5 bg-white rounded" id ="citycontainer" >
+          <h5 class="card-title" id="citychosen"> </h5>
+          <span id="todaydate"> </span>
+          <div id="icon"> <img id="wicon" src="http://openweathermap.org/img/w/50d.png" alt="Weather icon"></div>
           <p class="card-text">temp: <span id="tempinfo"></span></p>
           <p class="card-text">wind: <span id="windinfo"></span></p>
           <p class="card-text">humidity: <span id="humidityinfo"></span> </p>
     </div>
+
 </div>
      <div class="row five-days" id="nextdays"> </div>
     

@@ -1,5 +1,5 @@
 const searchform = document.querySelector('#form');
-const searchI = document.querySelector('#cityname');
+const searchCity= document.querySelector('#cityname');
 const cityContainerEl = document.querySelector('#citycontainer');
 const nextDays = document.querySelector('#nextdays');
 const btnEL = document.querySelector('#city-btn');
@@ -11,23 +11,24 @@ const chosenCity = document.querySelector('#citychosen');
 const today = dayjs();
 
 
+const emptyContent = function (){
 
+  windInfo.textContent = '';
+  tempInfo.textContent = '';
+  humidityInfo.textContent = '';
+  chosenCity.textContent = '';
+  datetoday.textContent = '';
+  $('#nextdays').empty();
+}
 
 const submitSearch = function (event) {
     event.preventDefault();
   
-    const cityName = searchI.value.trim();
+    const cityName = searchCity.value.trim();
   
     if (cityName) {
       getCityInfo(cityName);
-  
-      //cityContainerEl.textContent = '';
-      //searchI.value = '';
-      windInfo.textContent = '';
-      tempInfo.textContent = '';
-      humidityInfo.textContent = '';
-      chosenCity.textContent = '';
-      datetoday.textContent = '';
+  emptyContent();
     } else {
       alert('Please enter a valid City');
     }
@@ -38,13 +39,7 @@ const submitSearch = function (event) {
   
     if (citybtn) {
       featuredCities(citybtn);
-
-      windInfo.textContent = '';
-      tempInfo.textContent = '';
-      humidityInfo.textContent = '';
-      chosenCity.textContent = '';
-      datetoday.textContent = '';
-      $('#nextdays').empty();
+      emptyContent();
     }
   };
 
@@ -148,9 +143,10 @@ for (let i = 0; i < 40 ; i+=8) {
     const temp = `${dataO.list[i].main.temp}`;
     const unixTime =`${dataO.list[i].dt}`
     const date = dayjs.unix(unixTime).format('dddd, MMMM D, YYYY');
+    const icon =`${dataO.list[i].weather[0].icon}`
 
     const cardDiv = $('<div>');
-    cardDiv.addClass('card text-white bg-dark d-flex mb-3 col-2');
+    cardDiv.addClass('card container d-flex mb-3 col-2 shadow p-3 mb-5 bg-white rounded');
     cardDiv.css('max-width', '18rem');
     
     const cardEl = $('<div>');
@@ -159,7 +155,15 @@ for (let i = 0; i < 40 ; i+=8) {
         .addClass('card-header')
         .text(date);
     dateHeader.appendTo(cardEl);
+    const iconDiv = $('<div>').attr('id', 'icon');
+      const iconImg = $('<img>')
+      .attr('id', 'wicon')
+      .attr('src', `http://openweathermap.org/img/w/${icon}.png`) // Replace '50d.png' with the actual icon code
+      .attr('alt', 'Weather icon');
 
+      iconDiv.append(iconImg);
+      cardEl.append(iconDiv);
+      
       const cardtext = $('<p>');
       cardtext.addClass('card-text');
       cardtext.text(`${temp} ° celsius`);
@@ -172,6 +176,8 @@ for (let i = 0; i < 40 ; i+=8) {
       const createp2 = $('<p>');
       createp2.text(`Wind: ${wind} km/h`);
       createp2.appendTo(cardtext);
+
+  
 
       $('#nextdays').append(cardDiv);
 
